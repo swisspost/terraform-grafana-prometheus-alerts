@@ -56,5 +56,9 @@ module "test_vmagent" {
         mycustomlabel = "foobar"
       }
     }
+
+    "TooManyScrapeErrors" = {
+      "for" = "20m"
+    }
   }
 }

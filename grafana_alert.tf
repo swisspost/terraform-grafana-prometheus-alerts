@@ -20,7 +20,7 @@ resource "grafana_rule_group" "this" {
 
     content {
       name      = rule.value.alert
-      for       = try(rule.value.for, null)
+      for       = try(var.overrides[rule.value.alert].for, rule.value.for, null)
       condition = "ALERTCONDITION"
 
       annotations = {

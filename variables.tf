@@ -23,6 +23,7 @@ variable "overrides" {
     no_data_state   = optional(string)
     labels          = optional(map(string))
     annotations     = optional(map(string))
+    for             = optional(string)
   }))
   default = {}
 }
