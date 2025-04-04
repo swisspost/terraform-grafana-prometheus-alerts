@@ -19,8 +19,13 @@ resource "grafana_rule_group" "this" {
     for_each = { for rule in each.value.rules : rule.alert => rule }
 
     content {
-      name      = rule.value.alert
-      for       = try(var.overrides[rule.value.alert].for, rule.value.for, null)
+      name = rule.value.alert
+      for = try(
+        coalesce(
+          try(var.overrides[rule.value.alert].for, null), # Is there an override?
+          try(rule.value.for, null)                       # Is it defined inside the prometheus alert?
+      ), null)                                            # If nothing of both is defined, use `null`
+
       condition = "ALERTCONDITION"
 
       annotations = {
