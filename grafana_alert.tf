@@ -41,7 +41,7 @@ resource "grafana_rule_group" "this" {
       data {
         ref_id = "QUERY"
         relative_time_range {
-          from = 600
+          from = var.alert_relative_time_range_from
           to   = 0
         }
         datasource_uid = var.datasource_uid
@@ -58,7 +58,7 @@ resource "grafana_rule_group" "this" {
       data {
         ref_id = "QUERY_RESULT"
         relative_time_range {
-          from = 600
+          from = var.alert_relative_time_range_from
           to   = 0
         }
         datasource_uid = "__expr__"
@@ -100,7 +100,7 @@ resource "grafana_rule_group" "this" {
       data {
         ref_id = "ALERTCONDITION"
         relative_time_range {
-          from = 600
+          from = var.alert_relative_time_range_from
           to   = 0
         }
         datasource_uid = "__expr__"
