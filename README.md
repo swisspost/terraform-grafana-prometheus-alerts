@@ -85,7 +85,7 @@ Every alert supports the following overrides:
 
 | Name | Version |
 |------|---------|
-| grafana | ~> 3.2 |
+| grafana | >= 3.2, < 5.0.0 |
 
 ### Inputs
 
