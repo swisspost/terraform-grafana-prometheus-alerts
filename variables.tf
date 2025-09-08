@@ -45,3 +45,9 @@ variable "disable_provenance" {
   type        = bool
   default     = false
 }
+
+variable "alert_relative_time_range_from" {
+  description = "Relative time range (seconds) for alert evaluation window"
+  type        = number
+  default     = 600
+}
