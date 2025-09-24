@@ -2,7 +2,7 @@
 module "test_cert_manager" {
   source = "../"
 
-  prometheus_alerts_file_path = file("./alerts-cert-manager.yaml")
+  prometheus_alerts_file_path = file("./prometheus-alerts/cert-manager.yaml")
   folder_uid                  = grafana_folder.test.uid
   datasource_uid              = grafana_data_source.prometheus.uid
 
@@ -30,7 +30,7 @@ module "test_cert_manager" {
 module "test_kubernetes" {
   source = "../"
 
-  prometheus_alerts_file_path = file("./alerts-kubernetes.yaml")
+  prometheus_alerts_file_path = file("./prometheus-alerts/kubernetes.yaml")
   folder_uid                  = grafana_folder.test.uid
   datasource_uid              = grafana_data_source.prometheus.uid
 }
@@ -39,7 +39,7 @@ module "test_kubernetes" {
 module "test_vmagent" {
   source = "../"
 
-  prometheus_alerts_file_path = file("./alerts-vmagent.yml")
+  prometheus_alerts_file_path = file("./prometheus-alerts/vmagent.yml")
   folder_uid                  = grafana_folder.test.uid
   datasource_uid              = grafana_data_source.prometheus.uid
 
