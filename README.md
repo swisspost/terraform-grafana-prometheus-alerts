@@ -20,7 +20,8 @@ This module allows you to reuse the [Prometheus Alerting rules] and configure th
 
 ```hcl
 module "cert_manager_rules" {
-  source = "github.com/mkilchhofer/terraform-grafana-prometheus-alerts"
+  source  = "swisspost/prometheus-alerts/grafana"
+  version = "~> 1.0"
 
   prometheus_alerts_file_path = file("/path/to/alerts/cert-manager.yaml")
   folder_uid                  = grafana_folder.test.uid
@@ -43,7 +44,8 @@ If your Prometheus Alerting rules YAML contains an alert `alert: TooManyWriteErr
 
 ```hcl
 module "cert_manager_rules" {
-  source = "github.com/mkilchhofer/terraform-grafana-prometheus-alerts"
+  source  = "swisspost/prometheus-alerts/grafana"
+  version = "~> 1.0"
 
   prometheus_alerts_file_path = file("/path/to/alerts/cert-manager.yaml")
   folder_uid                  = grafana_folder.test.uid
