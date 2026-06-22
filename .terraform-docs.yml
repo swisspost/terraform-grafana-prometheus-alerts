@@ -12,3 +12,5 @@ sections:
     - providers
     - inputs
     - outputs
+
+version: "0.20.0"

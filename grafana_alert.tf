@@ -34,7 +34,7 @@ resource "grafana_rule_group" "this" {
       }
       labels = merge(rule.value.labels, try(var.overrides[rule.value.alert].labels, {}))
 
-      exec_err_state = coalesce(try(var.overrides[rule.value.alert].exec_err_state, null), "Error")
+      exec_err_state = coalesce(try(var.overrides[rule.value.alert].exec_err_state, null), var.default_exec_err_state)
       is_paused      = try(var.overrides[rule.value.alert].is_paused, null)
       no_data_state  = coalesce(try(var.overrides[rule.value.alert].no_data_state, null), "OK")
 

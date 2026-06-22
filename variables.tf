@@ -34,6 +34,12 @@ variable "default_evaluation_interval_duration" {
   default     = "5m"
 }
 
+variable "default_exec_err_state" {
+  description = "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are `OK`, `Error`, `KeepLast`, and `Alerting`."
+  type        = string
+  default     = "Error"
+}
+
 variable "org_id" {
   description = "The Organization ID of of the Grafana Alerting rule groups. (Only supported with basic auth, API keys are already org-scoped)"
   type        = string
