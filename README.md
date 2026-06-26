@@ -95,6 +95,7 @@ Every alert supports the following overrides:
 |------|-------------|------|---------|:--------:|
 | alert\_relative\_time\_range\_from | Relative time range (seconds) for alert evaluation window | `number` | `600` | no |
 | datasource\_uid | The UID of the Grafana datasource being queried with the expressions inside the Alerting rule file | `string` | n/a | yes |
+| default\_alert\_threshold | The default threshold for alerting rules. | `number` | `0` | no |
 | default\_evaluation\_interval\_duration | How often is the rule evaluated by default. (When not defined inside your Alerting rules file) | `string` | `"5m"` | no |
 | default\_exec\_err\_state | Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are `OK`, `Error`, `KeepLast`, and `Alerting`. | `string` | `"Error"` | no |
 | disable\_provenance | Allow modifying the rule group from other sources than Terraform or the Grafana API. | `bool` | `false` | no |
