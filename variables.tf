@@ -40,6 +40,12 @@ variable "default_exec_err_state" {
   default     = "Error"
 }
 
+variable "default_alert_threshold" {
+  description = "The default threshold for alerting rules."
+  type        = number
+  default     = 0
+}
+
 variable "org_id" {
   description = "The Organization ID of of the Grafana Alerting rule groups. (Only supported with basic auth, API keys are already org-scoped)"
   type        = string

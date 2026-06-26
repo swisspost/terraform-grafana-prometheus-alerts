@@ -108,7 +108,7 @@ resource "grafana_rule_group" "this" {
           "conditions" = [
             {
               "evaluator" = {
-                "params" = [coalesce(try(var.overrides[rule.value.alert].alert_threshold, null), 0)]
+                "params" = [coalesce(try(var.overrides[rule.value.alert].alert_threshold, null), var.default_alert_threshold)]
                 "type"   = "gt"
               }
               "operator" = {
