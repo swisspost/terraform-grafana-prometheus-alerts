@@ -16,14 +16,15 @@ variable "datasource_uid" {
 variable "overrides" {
   description = "Overrides per Alert rule"
   type = map(object({
-    alert_threshold = optional(number)
-    exec_err_state  = optional(string)
-    expr            = optional(string)
-    is_paused       = optional(bool)
-    no_data_state   = optional(string)
-    labels          = optional(map(string))
-    annotations     = optional(map(string))
-    for             = optional(string)
+    alert_threshold      = optional(number)
+    alert_threshold_type = optional(string)
+    exec_err_state       = optional(string)
+    expr                 = optional(string)
+    is_paused            = optional(bool)
+    no_data_state        = optional(string)
+    labels               = optional(map(string))
+    annotations          = optional(map(string))
+    for                  = optional(string)
   }))
   default = {}
 }
